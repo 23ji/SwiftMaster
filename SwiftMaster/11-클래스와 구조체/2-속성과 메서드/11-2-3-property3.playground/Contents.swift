@@ -114,7 +114,7 @@ class Circle1 {
     
     // (계산) 타입 속성(read-only)
     static var multiPi: Double {
-        return pi * 2
+        return pi * 2 //🍑타입끼리는 접근 가능하기 때문에 Circel1.pi(정식 문법)라고 안쓰고 생략
     }
     
     // 저장 속성
@@ -124,6 +124,7 @@ class Circle1 {
     // 생성자
     init(radius: Double) {
         self.radius = radius
+         //🍑 만약 여기에 pi 쓰려면 Circle1.pi 이렇게 써야함 -> 생성자는 인스턴스에 속해있으니까
     }
     
 }
