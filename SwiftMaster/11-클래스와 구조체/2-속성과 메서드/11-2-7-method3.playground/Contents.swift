@@ -137,7 +137,7 @@ mat[0, 1]!     // 대괄호 안에 파라미터 2개 필요
 enum Planet: Int {   // 열거형의 원시값
     case mercury = 1, venus, earth, mars, jupiter, saturn, uranus, neptune
     
-    static subscript(n: Int) -> Planet {    // Self
+    static subscript(n: Int) -> Planet {    // Self / 🍑열거형 자기자신이기 때문에 Planet이라고 쓸 수도 있다
         return Planet(rawValue: n)!
     }
 }

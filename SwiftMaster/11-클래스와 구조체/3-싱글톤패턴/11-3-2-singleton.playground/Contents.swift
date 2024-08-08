@@ -35,7 +35,7 @@ Singleton.shared
 
 
 let object = Singleton.shared
-object.userInfoId = 1234567
+object.userInfoId = 1234567 //🍑유일하기 때문에 변수에 담아서 값 바꿔도 전체 값(원본)이 다 바뀜
 
 Singleton.shared.userInfoId
 
@@ -51,12 +51,12 @@ Singleton.shared.userInfoId
 
 // 그렇지만 아래와 같은 것도 가능 ===> 새로운 객체를 생성한 것임
 
-//let object3 = Singleton()
+//let object3 = Singleton() //🍑붕어빵을 새로 생성한 것이기 때문에 얘는 값 바뀔 수 있음
 //object3.userInfoId
 
 
 
-// private init() 설정으로 새로운 객체 추가적 생성이 불가하게 막는 것 가능
+// private init() 설정으로 새로운 객체 추가적 생성이 불가하게 막는 것 가능 //🍑바로 위처럼 새 붕어빵 찍어내는게 안된다는 뜻
 
 
 
