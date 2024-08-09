@@ -96,7 +96,7 @@ let sixEggs = RecipeIngredient(name: "Eggs", quantity: 6)
 
 class ShoppingListItem: RecipeIngredient {
     
-    var purchased = false       // 모든 저장속성에 기본값 설정
+    var purchased = false       // 모든 저장속성에 기본값 설정 //🍑 기본값이 있기 때문에 에러가 날 확률이 없다!
     
     var description: String {
         var output = "\(quantity) x \(name)"
