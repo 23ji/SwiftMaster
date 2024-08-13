@@ -61,7 +61,7 @@ sbox.turnOff()
  * 프로토콜 타입 취급의 장점
  ---
  */
-// 프로토콜의 타입 취급의 장점 - 1 ⭐️
+// 프로토콜의 타입 취급의 장점 - 1 ⭐️ : 🍑 공통된 타입으로 뽑아서 저장할 수 있다.
 
 let electronic: [Remote] = [tv, sbox]      // 프로토콜의 형식으로 담겨있음
 
@@ -73,7 +73,7 @@ for item in electronic {   // 켜기, 끄기 기능만 사용하니 타입캐스
 
 
 
-// 프로토콜의 타입 취급의 장점 - 2 ⭐️
+// 프로토콜의 타입 취급의 장점 - 2 ⭐️ : 🍑 함수의 파라미터로 쓸 수 있다
 
 func turnOnSomeElectronics(item: Remote) {
     item.turnOn()
