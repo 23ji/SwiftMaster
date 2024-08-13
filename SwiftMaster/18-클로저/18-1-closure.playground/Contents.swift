@@ -47,11 +47,17 @@ let aClosureType = { () -> () in              // 변수에 담아서 호출하�
 }
 
 
-//let aClosureType = { print("안녕") }         // () -> ()
+// 🍑 void인 경우에 아래 처럼 쓸 수도 있음, 이 때 클로저인 것을 인지할 수 있어야 한다!
+//let aClosureType = {               // 변수에 담아서 호출하는 것도 가능
+//    print("안녕")
+//}
+
+
+let aClosureType1 = { print("안녕") }         // () -> () //🍑 1번 조건 변수에 할당 가능!
 
 
 
-aClosureType()
+aClosureType1() //🍑 () 함수의 실행!
 
 
 
@@ -87,10 +93,12 @@ func aFunction2(name: String) -> String {
 var a: (String) -> String = aFunction1
 
 a("안녕")
+// 🍑 변수에 담아서 사용할 때는 파라미터 이름이 필요 없다! ex : a(param: "안녕") <- 이러면 오류임
 
 
 a = aFunction2
-
+// 🍑 aF1이랑 aF2랑 타입이 완전 동일해서 a에 aF2도 할당 가능한 것임!
+// 함수 할당도 타입이 같아야 가능하다
 a("hello")
 
 
@@ -99,7 +107,7 @@ a("hello")
 // 함수(클로저)를 변수에 할당해서
 
 let closureType = { (param: String) -> String in         // 클로저 리터럴
-    return param + "!"
+    return param + "!" // 🍑 같은 타입끼리만 + 가능하기 때문에 param이 문자인거 타입 추론 가능
 }
 
 
