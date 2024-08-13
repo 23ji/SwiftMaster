@@ -14,7 +14,7 @@ import UIKit
 class Person {
     var name: String
     init(name: String) {
-        self.name = name
+        self.name = name // 🍑 여기서 self는 var name...
     }
 }
 
@@ -29,7 +29,7 @@ struct Calculator {
         number = number + num
     }
     
-    // 값 타입(구조체, 열거형)에서 인스턴스 값 자체를 치환 가능
+    // 값 타입(구조체, 열거형)에서 인스턴스 값 자체를 치환 가능  // 🍑 클래스에서는 반드시 생성자에서 인스턴스 찍어내야하기 때문에 이런 것 불가능
     mutating func reset() {
         self = Calculator()    // 값 타입은 새로 생성해서 치환하는 것도 가능
     }
@@ -43,9 +43,13 @@ struct Calculator {
 struct MyStruct {
     static let club = "iOS부서"
     
-    static func doPrinting() {
+    static func doPrinting() { // 🍑 타입 메서드라서 => 타입 자체를 가르킴
         print("소속은 \(self.club)입니다.")
     }
+    
+//    func doPrinting() { // 🍑 타입 메서드 아니라면 아래와 같이 사용해야함
+//        print("소속은 \(MyStruct.club)입니다.")
+//    }
 }
 
 
