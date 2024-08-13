@@ -21,6 +21,11 @@ class Aclass {
             }
         }
         var name: Cenum
+        
+        //🍑 멤버와이즈 이니셜라이저 제공되고 있는 것
+//        init(name: Cenum) {
+//            self.name = name
+//        }
     }
 }
 
@@ -29,7 +34,7 @@ class Aclass {
 
 let aClass: Aclass = Aclass()
 
-let bStruct: Aclass.Bstruct = Aclass.Bstruct(name: .bCase)
+let bStruct: Aclass.Bstruct = Aclass.Bstruct(name: .bCase) //🍑 이렇게 쓴 이유는 위의 멤버와이즈 이니셜라이저가 제공되기 때문 : 138강 4분쯤
 
 let cEnum: Aclass.Bstruct.Cenum = Aclass.Bstruct.Cenum.aCase     // 열거형은 케이스선택
 
@@ -70,8 +75,8 @@ struct BlackjackCard {
         
         // (읽기) 계산 속성 (열거형 내부에 저장 속성은 선언 불가)
         var values: Values {
-            switch self {
-            case Rank.ace:
+            switch self { //🍑 이 때 self는 Rank.two...Rank.ace 중 하나
+            case Rank.ace: // .ace로 써도 동일
                 return Values(first: 1, second: 11)    // 에이스 카드는 1 또는 11 로 쓰임
             case .jack, .queen, .king:
                 return Values(first: 10, second: nil)  // 10으로 쓰임
@@ -104,7 +109,7 @@ struct BlackjackCard {
 
 // A - 스페이드
 
-let card1 = BlackjackCard(rank: .ace, suit: .spades)
+let card1 = BlackjackCard(rank: .ace, suit: .spades) //🍑 .spades = BlackjackCard.Suit.spades
 print("1번 카드: \(card1.description)")
 
 
