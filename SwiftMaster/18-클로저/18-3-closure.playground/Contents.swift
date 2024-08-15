@@ -70,6 +70,8 @@ func closureCaseFunction(a: Int, b: Int, closure: (Int) -> Void) {
 
 // 2) 함수를 실행할 때 (클로저 형태로 전달)
 
+
+// 🍑 아래의 n, num은 파라미터 이름!, 이름은 개발자가 원하는 대로 정의 가능
 closureCaseFunction(a: 5, b: 2, closure: { (n) in    // 사후적 정의
     print("이제 출력할께요: \(n)")
 })
