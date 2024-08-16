@@ -152,7 +152,7 @@ let closureType4: (Int, Int) -> Int = { (a, b) in
     return a * b
 }
 
-let closureType5: (Int, Int) -> Int = { $0 * $1 }
+let closureType5: (Int, Int) -> Int = { $0 * $1 } //🍑 이 경우 입출력 타입 추론이 안되기 때문에 타입을 적어줘야함 (더블일 수도 있고, 인트일 수도 있고...)
 
 
 
