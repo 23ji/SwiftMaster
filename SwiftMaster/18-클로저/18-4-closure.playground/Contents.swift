@@ -203,6 +203,7 @@ class ViewController: UIViewController {
 
 let vc = ViewController()
 
+// 🍑 애플이 구현해놓은 것들 중엔 무언가 동작이 실행되고 나서 실행되는 함수의 파라미터명을 completion 혹은 completionHandler로 많이 작성해놓음
 
 //vc.dismiss(animated: true, completion: <#T##(() -> Void)?##(() -> Void)?##() -> Void#>)
 

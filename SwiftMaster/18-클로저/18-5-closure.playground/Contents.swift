@@ -108,7 +108,7 @@ squareFunc(30)
 
 
 
-// 레퍼런스 타입
+// 레퍼런스 타입   // 🍑 클래스와 동일한 레퍼타입이기 때문에 누적된 결과 발생!
 var dodoFunc = squareFunc
 dodoFunc(20)
 

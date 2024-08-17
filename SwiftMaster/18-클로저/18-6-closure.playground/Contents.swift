@@ -52,13 +52,13 @@ func performEscaping2(closure: @escaping () -> ()) {
 }
 
 
-//aSavedFunction()
+aSavedFunction() // 🍑 aSavedFunction에 "출력"이 저장되어 있음
 
 
-performEscaping2(closure: { print("다르게 출력") })
+performEscaping2(closure: { print("다르게 출력") }) // 🍑 aSavedFunction에 "다르게출력"이 저장되어 있음
 
 
-//aSavedFunction()
+aSavedFunction() // 🍑 aSavedFunction에 "다르게출력"이 저장되어 있음
 
 
 
@@ -106,9 +106,11 @@ func someFuction(closure: @autoclosure () -> Bool) {
 
 var num = 1
 
+// 🍑 오토클로저로 인해 //someFuction(closure: <#T##Bool#>) 이렇게 쓰면 자동으로
+// someFuction(closure: { <#T##Bool#> } ) -> 이렇게 되는 것임 ! 🍑
+
 
 // 실제로 함수를 사용하려고 하면
-
 
 //someFuction(closure: <#T##Bool#>)
 
