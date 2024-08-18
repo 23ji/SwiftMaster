@@ -27,7 +27,7 @@ class Dog {
 
 
 class Human {
-    var dog: Dog?
+    var dog: Dog?  // 🍑 (1)
 }
 
 
@@ -44,7 +44,7 @@ choco.sit()
 
 //var human = Human()
 //human.dog = choco
-//human.dog?.name
+//human.dog?.name // 🍑 위 (1) optional Dog을 채택했기 때문에 / 맨 뒤에는 ? 안붙여도 됨
 //print(human.dog?.name)     // Optional("초코얌")
 
 
@@ -106,7 +106,7 @@ class Cat {
     var myMaster: (() -> Person?)?
     
     init(aFunction: @escaping () -> Person?) {
-        self.myMaster = aFunction
+        self.myMaster = aFunction // 🍑 함수가 변수에 저장되면서 함수의 흐름(스택프레임)을 벗어나기 때문에 클로저를 사용함 => @escaping 키워드 필수 !
     }
 }
 
@@ -131,6 +131,10 @@ var cat: Cat? = Cat(aFunction: meowmeow)
 
 
 var name = cat?.myMaster?()?.name               // Optional("Jobs")
+// 🍑 cat? -> Cat? 이기 때문에 cat이 있을 수도 없을 수도 있다.
+// myMaster? -> (() -> Person?)? 이기 때문에 함수가 있을 수도 없을 수도 있다.
+// ()? -> meowmeow() -> Person? 이기 때문에 결과값 person이 있을 수도 없을 수도 있다.
+
 print(name)
 
 
