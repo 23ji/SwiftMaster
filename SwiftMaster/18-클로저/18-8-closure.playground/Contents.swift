@@ -22,9 +22,16 @@ class Dog {
     func doSomething() {
         // 비동기적으로 실행하는 클로저
         // 해당 클로저는 오래동안 저장할 필요가 있음 ==> 새로운 스택을 만들어서 실행하기 때문
+        // 🍑 아래 예시는 "사이클"은 일어나고 있지 않지만 "강한 참조":는 일어나고 있는 상태!!!
+        //1) 예시
         DispatchQueue.global().async {
             print("나의 이름은 \(self.name)입니다.")
         }
+        //2) 예시
+//        DispatchQueue.global().async { [self] in
+//            print("나의 이름은 \(name)입니다.")
+//        }
+        
     }
 }
 
@@ -50,6 +57,11 @@ choco.doSomething()
  - 캡처리스트 내에서, 약한 참조 또는 비소유 참조를 선언해서 문제해결
 ===================================================================**/
 //:> 클로저의 강한 참조 해결: 캡처 리스트 + 약한/비소유 참조 선언
+// 🍑 위 코드에서 아래와 같이 수정하면 액한 참조로 수정하는 것!!!
+
+// 🍑 DispatchQueue.global().async { [weak self] in
+//    print("나의 이름은 \(self?.name)입니다.")
+//}
 
 /*:
  ---
@@ -66,18 +78,21 @@ class Person {
         print("나의 이름은 \(name)입니다.")
     }
     
+    // 🍑 강한 참조
     func sayMyName1() {
         DispatchQueue.global().async {
             print("나의 이름은 \(self.name)입니다.")
         }
     }
     
+    // 🍑 약한 참조 / 출력값 옵셔널
     func sayMyName2() {
         DispatchQueue.global().async { [weak self] in
             print("나의 이름은 \(self?.name)입니다.")
         }
     }
     
+    // 🍑 약한 참조 + 가드렛 바인딩 / 일반적으로 약한 참조 추출 시에 가드문 많이 사용 / weakSelf라는 상수에 주로 담음
     func sayMyName3() {
         DispatchQueue.global().async { [weak self] in
             guard let weakSelf = self else { return }   // 가드문 처리 ==> 객체없으면 일종료
