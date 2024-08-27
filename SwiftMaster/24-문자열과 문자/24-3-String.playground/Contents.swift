@@ -83,7 +83,7 @@ struct Point {
 let p = Point(x: 5, y: 7)
 print("\(p)")
 
-
+// 🍑 swift4 이전에는 위처럼 각 타입에 직접 구현을 해줬어야한다면, 이후에는 아래처럼 StringInterpolation에 모아서 구현해주면 됨!
 extension String.StringInterpolation {
     mutating func appendInterpolation(_ value: Point) {
         appendInterpolation("X좌표는 \(value.x), Y좌표는 \(value.y)입니다.")
@@ -107,7 +107,7 @@ print("\(p)")
 //:> 메서드로 바뀌면서 활용도가 높아짐 (다른 파라미터 지정도 가능)
 
 extension String.StringInterpolation {
-
+    // 🍑 style: NumberFormatter.Style을 파라미터로 추가해 애플이 구현해놓은 것 사용
     mutating func appendInterpolation(_ value: Point, style: NumberFormatter.Style) {
         
         // "숫자" <====> "문자" 변환을 다루는 객체

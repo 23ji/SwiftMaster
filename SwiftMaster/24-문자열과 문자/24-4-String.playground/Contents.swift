@@ -28,10 +28,10 @@ print("원하는 숫자는 \(pi)")
 
 var string: String = ""
 
-string = String(3.1415926)
+string = String(3.1415926) // 🍑 정확히 말하면 String() 생성자로 생성하고 있는것!
 //print(string)
 
-string = "원하는 숫자는 " + String(format: "%.3f", pi)  // 반올림
+string = "원하는 숫자는 " + String(format: "%.3f", pi)  // 반올림 // 🍑 % : 형식 지정, .n : 소수점 n번째 까지, f : 실수
 //print(string)
 
 string = "원하는 숫자는 " + String(format: "%.2f", pi)
@@ -60,7 +60,7 @@ print(string)
 string = String(format: "%02d", 7)         // 두자리로 표현하되, 0포함
 print(string)
 
-string = String(format: "%07.3f", pi)      // 일곱자리로 표현하되 0과 .(dot) 포함, (소수점아래는 3자리)
+string = String(format: "%07.3f", pi)      // 일곱자리로 표현하되 0과 .(dot) 포함, (소수점아래는 3자리) // 🍑 003.142
 print(string)
 
 
@@ -90,7 +90,7 @@ struct Point: Codable {
 
 extension Point: CustomStringConvertible {
     var description: String {
-        let formattedValue = String(format: "%1$.2f , %2$.2f", self.x, self.y)
+        let formattedValue = String(format: "%1$.2f , %2$.2f", self.x, self.y) // 🍑 1$ : 첫번째 파라미터 ...
         //let formattedValue = String(format: "%.2f", x) + " , " + String(format: "%.2f", y)
         return "\(formattedValue)"
     }

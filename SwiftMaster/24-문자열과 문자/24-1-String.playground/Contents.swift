@@ -183,7 +183,7 @@ var nsString: NSString = "Swift"   // 문제없이 저장
 
 
 //let string: String = nsString   //에러발생
-let string: String = nsString as String
+let string: String = nsString as String // 🍑 브릿징이 가능하기 때문에 as? 이렇게 안해도 됨
 
 
 // String <===> NSString간에 자동으로 변환컨버팅되지는 않음(타입캐스팅해야함)
