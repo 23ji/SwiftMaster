@@ -41,8 +41,18 @@ struct Point {
     //init(x: Double, y: Double)
     
     //init()
+    
+    init(x: Double, y: Double) {
+        self.x = x
+        self.y = y
+    }
 }
 
+extension Point{
+    init(){
+        self.init(x: 0.0, y: 0.0)
+    }
+}
 
 
 struct Size {
