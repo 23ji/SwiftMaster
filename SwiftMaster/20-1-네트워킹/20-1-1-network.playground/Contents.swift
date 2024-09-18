@@ -23,6 +23,8 @@ import UIKit
 // 요청 예시
 // http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?key=KEYVALUE&targetDt=20210201
 
+// 🍑 &으로 연결된 것들은 순서 바꿔서 입력해도 됨
+// 🍑 KEYVALUE에는 자신이 해당 API에 발급받은 키 값을 쓰면 됨
 
 // JSON데이터를 스위프트 코드로 변환
 // https://app.quicktype.io/
