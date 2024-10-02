@@ -25,7 +25,7 @@ struct DailyBoxOfficeList: Codable {
 }
 
 
-
+// 🍑 서버에서 주는 데이터는 변형할 수 없고 변형하기 위해선 아래처럼 서버에선 온 데이터를 변형해서 사용해야함
 // 내가 만들고 싶은 데이터 (우리가 쓰려는 Struct / Class) =======================
 struct Movie {
     static var movieId: Int = 0   // 아이디가 하나씩 부여되도록 만듦
@@ -54,14 +54,14 @@ struct MovieDataManager {
     let movieURL = "http://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json?"
     
     let myKey = "7a526456eb8e084eb294715e006df16f"
-    
+    // 🍑 데이터 가져오는 함수 이름 보통 fetch~ 이런식으로 많이 지정
     func fetchMovie(date: String, completion: @escaping ([Movie]?) -> Void) {
         let urlString = "\(movieURL)&key=\(myKey)&targetDt=\(date)"
         performRequest(with: urlString) { movies in
             completion(movies)
         }
     }
-    
+    // 🍑 리턴형으로 전달안하고 콜백 함수로 결과,,, 이유는 다음 단원에서 설명!
     func performRequest(with urlString: String, completion: @escaping ([Movie]?) -> Void) {
         print(#function)
         
@@ -84,7 +84,7 @@ struct MovieDataManager {
                 return
             }
             
-            
+            // 🍑  클로저에서 객체의 속성이나 메서드에 접근하려면 반드시 셀프를 붙여줘야한다!
             // 데이터 분석하기
             if let movies = self.parseJSON(safeData) {
                 //print("parse")
@@ -126,7 +126,9 @@ struct MovieDataManager {
 //                myMovielists.append(myMovie)
 //            }
             
+            // 🍑 위에 처럼 해도되지만 고 차함수 이용해서 간편하게!
             // 고차함수를 이용해 movie배열 생성하는 경우 ⭐️
+            
             let myMovielists = dailyLists.map {
                 Movie(movieNm: $0.movieNm, rank: $0.rank, openDate: $0.openDt, audiCnt: $0.audiCnt, accAudi: $0.audiAcc)
             }

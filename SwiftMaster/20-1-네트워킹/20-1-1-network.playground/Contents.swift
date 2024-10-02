@@ -80,7 +80,7 @@ task.resume()   // 일시정지된 상태로 작업이 시작하기 때문
 
 
 // 받아온 데이터를 우리가 쓰기 좋게 변환하는 과정 (분석) ======================================
-
+// 🍑 분석을 위한 함수 만들기
 // 현재의 형태
 func parseJSON1(_ movieData: Data) -> [DailyBoxOfficeList]? {
     
@@ -89,9 +89,11 @@ func parseJSON1(_ movieData: Data) -> [DailyBoxOfficeList]? {
         // 자동으로 원하는 클래스/구조체 형태로 분석
         // JSONDecoder
         let decoder = JSONDecoder()
-        
+        // 🍑 .self 로 써야하는 것 유의 ! 인스턴스가 아니라 붕어빵 틀 자체의 데이터라는 뜻에서.
+        // 🍑 에러를 발생 할 수 있기 때문에 try do catch로 감싸야함
+        // 🍑 from: movieData라는 데이터를 가지고 MovieData.self의 형태로 디코딩 하는 것.
         let decodedData = try decoder.decode(MovieData.self, from: movieData)
-
+        // 🍑 리턴값은 옵셔널 배열
         return decodedData.boxOfficeResult.dailyBoxOfficeList
         
     } catch {
@@ -150,8 +152,13 @@ func parseJSON2(_ movieData: Data) -> [DailyBoxOfficeList]? {
 
 
 
-// 서버에서 주는 데이터의 형태 ====================================================
+// 서버에서 주는 데이터의 형태
+// 🍑 아래와 같은 사이트 이용하여
+// JSON데이터를 스위프트 코드로 변환
+// https://app.quicktype.io/
+//====================================================
 
+// 🍑 Decodable + Encodable = Codable / Codable이란 프로토콜을 채택을 해줘야 JSONDecoder()가 코드 분석 가능
 struct MovieData: Codable {
     let boxOfficeResult: BoxOfficeResult
 }
