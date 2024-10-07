@@ -33,8 +33,9 @@ let unspecifiedQueue = DispatchQueue.global(qos: .unspecified)
 
 let privateQueue = DispatchQueue(label: "com.inflearn.serial")
 
-
-
+// 🍑 이렇게 커스텀으로 동시 큐 만들수도 있음
+// 🍑
+let concurrentQueue = DispatchQueue(label: "serial", attributes: .concurrent)
 
 
 

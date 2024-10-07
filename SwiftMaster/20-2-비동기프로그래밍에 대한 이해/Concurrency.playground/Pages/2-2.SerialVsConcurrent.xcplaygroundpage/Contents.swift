@@ -28,6 +28,8 @@ func task3() {
 //: # 직렬(Serial)큐 VS 동시큐(Concurrent)
 
 //: ### Serial 직렬큐
+// 🍑 아래는 직렬 큐 만드는 예시 DispatchQueue(label: "문자열")
+// 🍑 global() 은 동시 큐, 아래처럼 만들면 직렬 큐
 let serialQueue = DispatchQueue(label: "com.inflearn.serial")
 
 

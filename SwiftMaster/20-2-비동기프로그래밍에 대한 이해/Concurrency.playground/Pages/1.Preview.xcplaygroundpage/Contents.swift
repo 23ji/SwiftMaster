@@ -83,6 +83,7 @@ func task10() {
 
 
 // 비동기처리를 하지 않으면 10초이상이 걸림
+// 🍑 즉 앱이 버벅거리게 됨
 
 task6()
 task7()
@@ -94,7 +95,8 @@ task10()
 
 
 //: ### 오래 걸리는 작업을 비동기 처리를 한다면
-
+// 🍑 DispacthQueue => 큐에 보낸다. global() => global이라는 공통된 큐에. async => 비동기적으로
+print("시작")
 DispatchQueue.global().async {
     task6()
 }
@@ -114,8 +116,9 @@ DispatchQueue.global().async {
 DispatchQueue.global().async {
     task10()
 }
+print("끝")
 
-
+// 🍑 이렇게 실행하면 뭐가 먼저 실행될지 모름 -> 큐에 배치 된 후 먼저 실행되는게 먼저! / 약 2초 걸림
 
 
 
