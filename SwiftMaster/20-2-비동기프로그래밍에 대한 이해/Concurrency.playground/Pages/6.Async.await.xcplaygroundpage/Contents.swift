@@ -58,30 +58,31 @@ func linkedPrint(completion: @escaping (Int) -> Void) {
 // Async/await 함수의 설계
 // 내부에 따로 DispatchQueue로 보낼 필요는 없음
 
-//func longtimeAsyncAwait() async -> Int {
-//    print("프린트 - 1")
-//    sleep(1)
-//    print("프린트 - 2")
-//    sleep(1)
-//    print("프린트 - 3")
-//    sleep(1)
-//    print("프린트 - 4")
-//    sleep(1)
-//    print("프린트 - 5")
-//    return 7
-//}
+// 🍑 리턴형으로 설계시 async 키워드 붙이기 !
+func longtimeAsyncAwait() async -> Int {
+    print("프린트 - 1")
+    sleep(1)
+    print("프린트 - 2")
+    sleep(1)
+    print("프린트 - 3")
+    sleep(1)
+    print("프린트 - 4")
+    sleep(1)
+    print("프린트 - 5")
+    return 7
+}
 
 
 
 // Async/await 함수의 사용
-
-//func linkedPrint2() async -> Int {
-//    _ = await longtimeAsyncAwait()
-//    _ = await longtimeAsyncAwait()
-//    _ = await longtimeAsyncAwait()
-//    _ = await longtimeAsyncAwait()
-//    return 7
-//}
+// 🍑 실행시 await 붙이기 !
+func linkedPrint2() async -> Int {
+    _ = await longtimeAsyncAwait()
+    _ = await longtimeAsyncAwait()
+    _ = await longtimeAsyncAwait()
+    _ = await longtimeAsyncAwait()
+    return 7
+}
 
 
 

@@ -32,6 +32,8 @@ URLSession.shared.dataTask(with: url) { (data, response, error) in
 }.resume()
 
 
+// 🍑 => 즉, URL세션은 내부적으로 비동기로 동작하기 때문에 DispatchQueue.main를 통해 메인 스레드로 보내줘야함
+
 
 
 

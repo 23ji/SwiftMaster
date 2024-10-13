@@ -7,26 +7,30 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //: ### 리턴(return)이 아닌 콜백함수를 통해, 끝나는 시점을 알려줘야 한다.
 
 //:> 함수(메서드)를 아래처럼 설계하면 절대 안된다.
+//                              🍑 리턴형 설계 <ㄱ
 func getImages(with urlString: String) -> UIImage? {
     
+    // 🍑1번
     let url = URL(string: urlString)!
-    
+    // 🍑2번
     var photoImage: UIImage? = nil
-    
+    // 🍑 3번
+    // 🍑 UrlSession은 내부적으로 비동기적으로 동작(설계)
     URLSession.shared.dataTask(with: url) { (data, response, error) in
         if error != nil {
             print("에러있음: \(error!)")
         }
-        // 옵셔널 바인딩
+        // 옵셔널 바인딩 🍑 데이터가 옵셔널타입이기 때문에
         guard let imageData = data else { return }
         
         // 데이터를 UIImage 타입으로 변형
         photoImage = UIImage(data: imageData)
         
     }.resume()
-
     
-    return photoImage    // 항상 nil 이 나옴
+    // 🍑4번
+    return photoImage    // 항상 nil 이 나옴 🍑 => 비동기적이기 때문에 항상 nil이 나옴
+    // 🍑 3번을 실행 후 기다리지 않고! 바로 4번으로 넘어가기 때문에 항상 nil
 }
 
 
@@ -39,6 +43,7 @@ getImages(with: "https://bit.ly/32ps0DI")    // 무조건 nil로 리턴함 ⭐�
 
 
 //:> 올바른 함수(메서드)의 설계 - 콜백함수의 사용법
+//                                        🍑 클로저 형식 <ㄱ
 func properlyGetImages(with urlString: String, completionHandler: @escaping (UIImage?) -> Void) {
     
     let url = URL(string: urlString)!
@@ -54,7 +59,7 @@ func properlyGetImages(with urlString: String, completionHandler: @escaping (UII
         
         // 데이터를 UIImage 타입으로 변형
         photoImage = UIImage(data: imageData)
-        
+        // 🍑 콜백함수 실행
         completionHandler(photoImage)
         
     }.resume()

@@ -7,9 +7,9 @@ PlaygroundPage.current.needsIndefiniteExecution = true
 //: ### Thread-safe하지 않을때, 처리하는 방법
 // 배열은 여러쓰레드에서 동시에 접근하면 문제가 생길 수 있다.
 
-
+// 🍑 빈 배열 생성
 var array = [String]()
-
+// 🍑 직렬 큐 생성
 let serialQueue = DispatchQueue(label: "serial")
 
 
@@ -17,7 +17,7 @@ for i in 1...20 {
     DispatchQueue.global().async {
         print("\(i)")
         //array.append("\(i)")    //  <===== 동시큐에서 실행하면 동시다발적으로 배열의 메모리에 접근
-        
+        // 🍑 아래 코드가 없다면 스레드 세이프 하지 않게 됨
         serialQueue.async {        // 올바른 처리 ⭐️
             array.append("\(i)")
         }
@@ -28,7 +28,7 @@ for i in 1...20 {
 
 
 // 5초후에 배열 확인하고 싶은 코드 일뿐...
-
+// 🍑 지금으로 부터 5초 뒤에 실행하는 코드
 DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
     print(array)
     //PlaygroundPage.current.finishExecution()
