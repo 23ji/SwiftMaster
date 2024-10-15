@@ -17,6 +17,7 @@ var num2 = 20
 
 
 
+// 🍑 inout 키워드 : 변수의 주소를 전달해 두 변수가 서로 교환될 수 있게 해주는 키워드 -> 함수 마지막 부분에서 배웠었음
 // 두 숫자를 스왑(서로 교환)하는 함수의 정의
 func swapTwoInts(_ a: inout Int, _ b: inout Int) {
     let tempA = a
@@ -25,7 +26,7 @@ func swapTwoInts(_ a: inout Int, _ b: inout Int) {
 }
 
 
-
+// 🍑 inout 키워드 -> 사용시 반드시 & 붙여서 사용해야함
 // 위에서 정의한 함수의 실행
 swapTwoInts(&num1, &num2)
 
@@ -143,11 +144,16 @@ printStringArray(array: people)
 
 
 // 파라미터의 타입에 구애받지 않는 일반적인(제네릭) 타입을 정의
-
+                //<🍑>          🍑            🍑 -> 대문자로 시작하는 문자(열) 아무거나 사용하면 됨
 func swapTwoValues<T>(_ a: inout T, _ b: inout T) {      // 플레이스홀더의 역할(표시 역할일뿐) (같은 타입이어야함)
     let tempA = a
     a = b
     b = tempA
+}
+
+// 🍑 두개의 타입 사용시 이렇게 두개 구현
+func swapTwoValues<T, A>(_ a: inout T, _ b: inout A) {      // 플레이스홀더의 역할(표시 역할일뿐) (같은 타입이어야함)
+        // 함수 구현..
 }
 
 
@@ -192,8 +198,8 @@ printArray(array: people)      // 플레이스홀더 ====> [String]
 
 
 // 배열 타입
-let array1: [String] = ["Steve", "Allen"]
-let array2: Array<String> = ["Cook", "Musk"]      // 실제 컴파일시 내부에서 일어나는 일
+let array1: [String] = ["Steve", "Allen"] // 🍑 배열의 단축 문법
+let array2: Array<String> = ["Cook", "Musk"]      // 실제 컴파일시 내부에서 일어나는 일 // 🍑 배열의 정식 문법
 
 
 
@@ -214,8 +220,7 @@ var optionalType2: Optional<String>
 //swap(<#T##a: &T##T#>, <#T##b: &T##T#>)
 
 
-
-
+// 🍑[1, 2, 3].map(<#T##transform: (Int) throws -> T##(Int) throws -> T#>) 여기서 이 T가 제네릭임
 
 //Copyright (c) 2021 we.love.code.allen@gmail.com
 //
