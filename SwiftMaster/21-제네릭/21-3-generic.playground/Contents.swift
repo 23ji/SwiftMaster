@@ -18,10 +18,11 @@ import UIKit
  - <T> ===> associatedtype T
  =================================================**/
 
-
+// 🍑 클래스나 구조체였으면, struct RemoteControl<T> { 이런식으로 해야함
 protocol RemoteControl {           // <T>의 방식이 아님
+    // 🍑 associatedtype T -> 프로토콜에서는 이렇게 제네릭 선언해야함 => 연관타입
     associatedtype T               // 연관형식은 대문자로 시작해야함(UpperCamelcase)
-    func changeChannel(to: T)      // 관습적으로 Element를 많이 사용
+    func changeChannel(to: T)      // 관습적으로 (T를 ->) Element를 많이 사용
     func alert() -> T?
 }
 
@@ -31,8 +32,9 @@ protocol RemoteControl {           // <T>의 방식이 아님
 
 struct TV: RemoteControl {
     
-    typealias T = Int       // 생략 가능
-    
+    typealias T = Int       // 생략 가능, 🍑 생략하고 아래서 타입 명시하면 추론되기도 함.
+    // 🍑 ㄴ> 프로토콜에서 선언한 associatedtype T을 어떤 타입으로 사용할건지 명시적으로 언급해줘야함
+
     func changeChannel(to: Int) {
         print("TV 채널바꿈: \(to)")
     }

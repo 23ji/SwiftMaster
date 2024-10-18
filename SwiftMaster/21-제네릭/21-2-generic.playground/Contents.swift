@@ -30,7 +30,7 @@ struct GenericMember<T> {
 
 
 var member1 = GenericMember(members: ["Jobs", "Cook", "Musk"])
-// 🍑 ㄴ> 제네릭이더라도 이렇게 초기값을 넣으면 타입이 결정됨 ㅇㅇ 
+// 🍑 ㄴ> 제네릭이더라도 이렇게 초기값을 넣으면 타입이 결정됨 ㅇㅇ
 var member2 = GenericMember(members: [1, 2, 3])
 
 
