@@ -57,7 +57,9 @@ let now = Date()
 //:> Date의 "년/월/일/시/분/초"를 확인하는 방법
 
 // 1) 날짜 - 년 / 월 / 일
+        // 🍑 연도라는 요소를 뽑아내는 것 <ㄱ
 let year: Int = calendar.component(.year, from: now)
+                // 🍑 ㄴ> 캘린더의 컴포넌트라는 요소를 가지고 그 중 이미 정의되어 있는 year라는 타입을 가지고 now를 변환하는 것!
 let month: Int = calendar.component(.month, from: now)
 let day: Int = calendar.component(.day, from: now)
 
