@@ -15,7 +15,7 @@ private class SomePrivateClass {                    // 명시적인 private 선�
     public var somePublicProperty = "SomePublic"
     var someInternalProperty = "SomeInternal"
     
-    // 실제 fileprivate 처럼 동작 ⭐️ (공식문서 오류)
+    // 실제 fileprivate 처럼 동작 ⭐️ (공식문서 오류) 타입은 private 해봤자 의미 없음, 동작 안함, fileprivate로 동작함
     var someFilePrivateProperty = "SomeFilePrivate"
     private var somePrivateProperty = "SomePrivate"
 }
@@ -24,7 +24,7 @@ private class SomePrivateClass {                    // 명시적인 private 선�
 
 class SomePrivateControlClass {
     // filepravate 또는 private으로만 선언 가능
-    fileprivate let controlProperty = SomePrivateClass()
+    fileprivate let controlProperty = SomePrivateClass() // 🍑 SomePri~가 fileprivate이기 때문에 그냥 let~ 쓰면 오류. fileprivate 붙여줘야함
     
     func controlFunction() {
         let someFilePrivate = SomePrivateClass()

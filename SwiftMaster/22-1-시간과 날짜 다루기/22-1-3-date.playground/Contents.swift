@@ -65,7 +65,7 @@ formatter.timeStyle = .full           // "2:53:12 PM Korean Standard Time"
 let someString1 = formatter.string(from: Date())
 print(someString1)
 
-
+// 🍑 => formatter 라는 객체를 만들어서 datestyle과 textstyle을 지정, .string 형식으로 Date()를 출력
 
 
 
@@ -76,7 +76,7 @@ print(someString1)
 //formatter.locale = Locale(identifier: "ko_KR")
 //formatter.dateFormat = "yyyy/MM/dd"
 formatter.dateFormat = "yyyy년 MMMM d일 (E)"
-
+// 🍑 유니코드에서 지정한 형식을 따름
 
 let someString2 = formatter.string(from: Date())
 print(someString2)

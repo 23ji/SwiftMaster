@@ -16,15 +16,15 @@ components.minute = 30
 components.second = 0
 
 
-let specifiedDate: Date = Calendar.current.date(from: components)!
+let specifiedDate: Date = Calendar.current.date(from: components)! // 🍑 컴포넌트를 데이터화 시키는 코드
 print(specifiedDate)
-
+ 
 
 
 
 
 // 조금 더 세련된 방식으로 구현
-// 구조체의 확장이용해서 Date에 생성자 구현
+// 구조체의 확장 이용해서 Date에 생성자 구현
 
 extension Date {
     // 구조체 실패가능 생성자로 구현
@@ -39,7 +39,8 @@ extension Date {
             return nil  // 날짜 생성할 수 없다면 nil리턴
         }
         
-        self = date      //구조체이기 때문에, self에 새로운 인스턴스를 할당하는 방식으로 초기화가능
+        self = date      //구조체이기 때문에, self에 새로운 인스턴스를 할당하는 방식으로 초기화가능 //🍑 성공시
+        // 🍑 self 사용 기억 안나면 Self / self 비교 수업 보기
     }
 }
 
