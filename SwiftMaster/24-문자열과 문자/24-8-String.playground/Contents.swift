@@ -43,10 +43,11 @@ import UIKit
  */
 var welcome = "Hello"
 
-welcome.insert("!", at: welcome.endIndex)
+// 🍑 문자 넣기
+welcome.insert("!", at: welcome.endIndex) // 🍑 at에는 String.Index를 써야하기 때문에 정수 사용 않고 인덱스 사용해야함!
 // "Hello!"
 
-
+// 🍑 문자열 넣기
 welcome.insert(contentsOf: " there", at: welcome.index(before: welcome.endIndex))
 // "Hello there!"
 
@@ -73,7 +74,7 @@ var newWelcome = welcome.replacingOccurrences(of: "Swift", with: "World")
 print(welcome)
 print(newWelcome)
 
-                                                                // 대소문자 무시 옵션
+                                                                                    // 대소문자 무시 옵션
 newWelcome = welcome.replacingOccurrences(of: "swift", with: "New World", options: [.caseInsensitive], range: nil)
 print(welcome)
 print(newWelcome)
@@ -116,7 +117,7 @@ welcome      // "Hello"
 
 
 welcome.removeAll()
-welcome.removeAll(keepingCapacity: true)
+welcome.removeAll(keepingCapacity: true)//🍑keepingCapacity :  지우되 메모리 용량은 남겨 놓겠다.
 
 
 /*:
@@ -144,7 +145,7 @@ if let someIndex = string.firstIndex(of: " ") {
 
 if let firstIndex = string.firstIndex(of: " ") {
     let range = firstIndex...string.index(firstIndex, offsetBy: 5)
-    string.removeSubrange(range)
+    string.removeSubrange(range) // 🍑 super의 범위를 지움
     print(string)     // "Hello world"
 }
 

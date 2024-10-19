@@ -66,7 +66,7 @@ if emptyString == nil {    // 빈 문자열은 nil이 아님 ===> String타입 (
  [String.Index 타입]
  - 문자열.startIndex
  - 문자열.endIndex
- - 문자열.index(<#T##i: String.Index##String.Index#>, offsetBy: <#T##String.IndexDistance#>)
+ - 문자열.index(<#T##i: String.Index##String.Index#>, offsetBy: <#T##String.IndexDistance#>)  // 🍑 제일 많이 사용
  
  - 문자열.index(after: <#T##String.Index#>)
  - 문자열.index(before: <#T##String.Index#>)
@@ -101,11 +101,11 @@ greeting.startIndex
 print(greeting.startIndex)
 
 greeting[greeting.startIndex]    // "G"
-
+// 🍑 greeting[0] 이렇게 사용 불가능! greeting.startIndex으로 인덱스 뽑아서 사용해야함 => 정수형태의 인덱스 사용 불가능
 
 
 // 정수형태를 한번 변형해서(걸러서) 사용하는 방식 ⭐️
-
+// 🍑 index(이 인덱스로부터, offsetBy:이만큼 떨어진 인덱스)를 구함, 음수도 가능
 var someIndex = greeting.index(greeting.startIndex, offsetBy: 2)
 greeting[someIndex]      // "t"
 
@@ -114,16 +114,16 @@ someIndex = greeting.index(greeting.startIndex, offsetBy: 1)
 greeting[someIndex]      // "u"
 
 
-someIndex = greeting.index(after: greeting.startIndex)
+someIndex = greeting.index(after: greeting.startIndex) // 🍑 다음 인덱스
 greeting[someIndex]      // "u"
 
 
-someIndex = greeting.index(before: greeting.endIndex)
+someIndex = greeting.index(before: greeting.endIndex) // 🍑 전 인덱스
 greeting[someIndex]      // "!"
 
 
 
-
+// 🍑 indices는 index의 복수형, 인덱스를 하나하나 뽑아서 for문 돌릴 수 있음
 for index in greeting.indices {       // 개별 문자의 인덱스에 접근
     print("\(greeting[index]) ", terminator: "")
 }
@@ -157,7 +157,7 @@ var thirdCh = greeting[thirdCharIndex]
 
 // 범위를 벗어나면 에러발생 주의 ⭐️
 
-//greeting[greeting.endIndex]
+//greeting[greeting.endIndex] // 🍑 -> endIndex는 끝!이기 때문에 접근 불가
 greeting[greeting.index(greeting.endIndex, offsetBy: -1)]
 //greeting[greeting.index(before: greeting.endIndex)]
 
@@ -166,7 +166,7 @@ greeting[greeting.index(greeting.endIndex, offsetBy: -1)]
 
 someIndex = greeting.index(greeting.startIndex, offsetBy: 7)
 
-
+// 🍑 범위 안벗어나기 위해 이렇게 할 수도 있음
 if greeting.startIndex <= someIndex && someIndex < greeting.endIndex { // 범위를 벗어나지 않는 경우 코드 실행
     print(greeting[someIndex])
 }
@@ -188,13 +188,13 @@ for i in greeting.indices {
 
 let lower = greeting.index(greeting.startIndex, offsetBy: 2)
 let upper = greeting.index(greeting.startIndex, offsetBy: 5)
-greeting[lower...upper]
+greeting[lower...upper] // 🍑 출력 : "ten" ->이렇게 어떤 범위를 뽑아 낼 수도 있음
 
 
 
 // 실제로는 뒤에서 배울, 교체/삭제에서 주로 범위를 활용
 
-var range = greeting.range(of: "Tag!")!
+var range = greeting.range(of: "Tag!")! //🍑 -> 인덱스 뽑아냄
 greeting[range]
 
 
@@ -205,7 +205,7 @@ greeting[range]
 
 // 정수 형태 수치로 거리 측정
 
-var distance = greeting.distance(from: lower, to: upper)
+var distance = greeting.distance(from: lower, to: upper) // 🍑 from과 to 사이가 얼마나 떨어져 있는지 정수로 알려줌
 print(distance)
 
 

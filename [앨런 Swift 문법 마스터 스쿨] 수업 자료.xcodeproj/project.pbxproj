@@ -200,9 +200,9 @@
 		49A1AE4C2C57775100D0D056 /* 24-3-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-3-String.playground"; sourceTree = "<group>"; };
 		49A1AE4D2C57775100D0D056 /* 24-4-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-4-String.playground"; sourceTree = "<group>"; };
 		49A1AE4E2C57775100D0D056 /* 24-5-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-5-String.playground"; sourceTree = "<group>"; };
-		49A1AE4F2C57775100D0D056 /* 24-6-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-6-String.playground"; sourceTree = "<group>"; };
-		49A1AE502C57775100D0D056 /* 24-7-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-7-String.playground"; sourceTree = "<group>"; };
-		49A1AE512C57775100D0D056 /* 24-8-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-8-String.playground"; sourceTree = "<group>"; };
+		49A1AE4F2C57775100D0D056 /* 24-6-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-6-String.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		49A1AE502C57775100D0D056 /* 24-7-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-7-String.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		49A1AE512C57775100D0D056 /* 24-8-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-8-String.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE522C57775100D0D056 /* 24-9-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-9-String.playground"; sourceTree = "<group>"; };
 		49A1AE532C57775100D0D056 /* 24-10-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-10-String.playground"; sourceTree = "<group>"; };
 		49A1AE542C57775100D0D056 /* 24-11-String.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "24-11-String.playground"; sourceTree = "<group>"; };

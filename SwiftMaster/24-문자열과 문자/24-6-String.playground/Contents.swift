@@ -18,26 +18,32 @@ import UIKit
 var someString = "Swift"
 
 
-// 1) 문자열을 문자열(String) 배열화 하기 ⭐️
+// 1) 문자열을 문자열(String) 배열화 하기 ⭐️ // 🍑 타입 : 문자열 => 이 방법 사용하기!
 
 var array: [String] = someString.map { String($0) }
+
+// 🍑 이렇게 길게 쓸 수도 있음
+//  var array1: [String] = someString.map { chr in
+//                              String(chr)
+//                         }
+
 print(array)
 
 
-// 2) 문자열을 문자(Character) 배열화 하기
+// 2) 문자열을 문자(Character) 배열화 하기 // 🍑 타입 : 캐릭터 => 이렇게 사용하지 말기!!!
 
 var array2: [Character] = Array(someString)     // [Character]      //typealias Element = Character
 
 
 
-// (참고) 문자열을 문자열(String) 배열화하는 추가적 방법
+// (참고) 문자열을 문자열(String) 배열화하는 추가적 방법 // 🍑 타입 : 문자열
 var array3: [String] = Array(arrayLiteral: someString)  // [String]
 
 
 
 
 
-// 3) 문자열 배열 [String] =====> 문자열
+// 3) 문자열 배열 [String] =====> 문자열 🍑 이 방법 사용!
 
 var newString = array.joined()
 newString = array3.joined()
@@ -71,8 +77,8 @@ var newString3 = String(someString.shuffled())
 print(newString3)
 
 
-// map고차함수를 사용해서 변환 ⭐️
-
+// map고차함수를 사용해서 변환 ⭐️ 🍑 이 방법 사용!
+// 🍑 문자열 -> 배열 -> 배열.섞는 메서드 -> 다시 문자열로
 newString3 = someString.map { String($0) }.shuffled().joined()
 print(newString3)
 
