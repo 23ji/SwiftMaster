@@ -23,6 +23,7 @@ a += "!"
  
  [문자열 복합할당 연산자]
  static func += (lhs: inout String, rhs: String)
+ // 🍑  inout : 파라미터의 주소를 사용하는 방식, 주소 넣고 빼는,,,
  ==================================================**/
 
 
@@ -51,7 +52,8 @@ struct Vector2D {
 //infix operator + : AdditionPrecedence       // 연산자 선언
 
 extension Vector2D {
-    static func + (lhs: Vector2D, rhs: Vector2D) -> Vector2D {
+    // 🍑  static infix func => infix 생략된거임!
+    static func + (lhs: Vector2D, rhs: Vector2D) -> Vector2D { // 🍑  서로 다른 붕어빵을 더해줘야하기 때문에 타입 메서드로 구현(인스턴스메서드 X)
         return Vector2D(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 }
@@ -69,7 +71,7 @@ let combinedVector = vector + anotherVector
 
 extension Vector2D {
     static prefix func - (vector: Vector2D) -> Vector2D {
-        return Vector2D(x: -vector.x, y: -vector.y)
+        return Vector2D(x: -vector.x, y: -vector.y) // 🍑  - 넣어서 할당, 리턴
     }
 }
 
@@ -86,6 +88,7 @@ let alsoPositive = -negative
 // 3) 복합할당 연산자의 구현
 
 extension Vector2D {
+            // 🍑  앞에거에는 inout 붙여야함(정의가 그럼)
     static func += (left: inout Vector2D, right: Vector2D) {
         left = left + right
     }
@@ -152,7 +155,7 @@ vector1 == vector2
 
 
 // 연산자 메서드를 구현하면 비교가 가능해짐
-// Equatable 프로토콜을 채택 후, 구현
+// Equatable 프로토콜을 채택 후, 구현 // 🍑 직접 구현 안해도 됨..자동으로 해줌 아래 //직접구현 부분 구현 안해도됨
 
 extension Vector2D: Equatable {
     
@@ -186,7 +189,19 @@ if twoThree == anotherTwoThree {
   연산자(==) 메서드 자동 채택/구현
  =============================================================**/
 
+enum Weekday{
+    case mon
+    case tues
+}
 
+Weekday.mon == Weekday.tues // 🍑 Equtable 채택 안해도 됨
+
+enum Weekday2: Equatable{
+    case mon
+    case tues(String)
+}
+
+Weekday2.mon == Weekday2.tues("hi") // 🍑 Equtable 채택하면 자동으로 연산자 구현 해줌
 
 
 //Copyright (c) 2021 we.love.code.allen@gmail.com

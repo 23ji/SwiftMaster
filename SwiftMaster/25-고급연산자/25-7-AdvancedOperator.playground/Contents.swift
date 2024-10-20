@@ -40,8 +40,8 @@ extension Vector2D {
 ========================================================**/
 
 precedencegroup MyPrecedence {
-    higherThan: AdditionPrecedence
-    lowerThan: MultiplicationPrecedence
+    higherThan: AdditionPrecedence // 🍑 더하기보다 높ㅍ다
+    lowerThan: MultiplicationPrecedence// 🍑 곱하기보다 낮다
     associativity: left                   // 결합성 ===> left / right / none
 }
 
@@ -71,7 +71,7 @@ infix operator +-: MyPrecedence
 
 extension Vector2D {
     static func +- (left: Vector2D, right: Vector2D) -> Vector2D {
-        return Vector2D(x: left.x + right.x, y: left.y - right.y)
+        return Vector2D(x: left.x + right.x, y: left.y - right.y) // 🍑 x는 더하고 y는 뺀다
     }
 }
 
@@ -97,7 +97,7 @@ print(plusMinusVector)                             // Vector2D(x: 4.0, y: -2.0)
  * 중위연산자가 아닌 경우의 예시
  ---
  */
-// 1) 연산자의 선언
+// 1) 연산자의 선언 // 🍑 중위 아니면 우선순위 그룹 필요없음
 
 prefix operator +++
 

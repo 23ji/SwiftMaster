@@ -14,12 +14,12 @@ import UIKit
 // 2) Logical AND Operator(앤드, 그리고)
 true && true
 true && false
-false && true
+false && true // 🍑 앞이 fasle이기 떄문에 뒤에거는 보지도 않고 false로 판별함
 false && false
 
 
 // 3) Logical OR Operator(또는)
-true || true
+true || true // 🍑 앞이 true이기 떄문에 뒤에거는 보지도 않고 true로 판별함
 true || false
 false || true
 false || false
@@ -49,7 +49,7 @@ var num = 0
 
 
 func checking() -> Bool {
-    print(#function)
+    print(#function) // 🍑 지금 실행되고 있는 함수의 이름을 알려줌
     num += 1
     return true
 }
@@ -65,7 +65,7 @@ if checking() || checking() {    // &&으로 바꿔보기
 
 
 num
-
+// 🍑 출력 : 1 => 단락평가로 인해 체킹 함수 한번만 실행됙 때문
 
 
 /*:
@@ -93,6 +93,8 @@ func passwordCodeChecking() -> Bool {
 // 아래 3개의 케이스에서 returnTrue 메서드는 각각 몇 번씩 호출될까?
 
 print("\n[ 첫번째 케이스 ] =============")
+// 🍑   "if doorCodeChecking() && passwordCodeChecking() && false" => 이걸 처음 실행
+// 🍑   "|| true && doorCodeChecking() && passwordCodeChecking()" => 이걸 다음에 실해 => &&가 || 보다 우선이기 떄문에
 if doorCodeChecking() && passwordCodeChecking() && false || true && doorCodeChecking() && passwordCodeChecking() {
     
 }
@@ -149,6 +151,7 @@ let passwordResult1 = passwordCodeChecking()
 let doorResult2 = doorCodeChecking()
 let passwordResult2 = passwordCodeChecking()
 
+// 🍑 이렇게 함수의 실행을 변수에 담으면 사이드이펙트 예방 가능
 
 if doorResult1 || passwordResult1 && doorResult1 || false && passwordResult2 {
     
