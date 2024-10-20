@@ -174,8 +174,8 @@
 		49A1AE2A2C57775100D0D056 /* Concurrency.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Concurrency.playground; sourceTree = "<group>"; };
 		49A1AE2C2C57775100D0D056 /* 20-1-error.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20-1-error.playground"; sourceTree = "<group>"; };
 		49A1AE2D2C57775100D0D056 /* 20-2-error.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20-2-error.playground"; sourceTree = "<group>"; };
-		49A1AE2E2C57775100D0D056 /* 20-3-error.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20-3-error.playground"; sourceTree = "<group>"; };
-		49A1AE2F2C57775100D0D056 /* 20-4-defer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20-4-defer.playground"; sourceTree = "<group>"; };
+		49A1AE2E2C57775100D0D056 /* 20-3-error.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20-3-error.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		49A1AE2F2C57775100D0D056 /* 20-4-defer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "20-4-defer.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE312C57775100D0D056 /* 21-1-generic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "21-1-generic.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE322C57775100D0D056 /* 21-2-generic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "21-2-generic.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE332C57775100D0D056 /* 21-3-generic.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "21-3-generic.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
