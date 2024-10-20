@@ -214,8 +214,8 @@
 		49A1AE5B2C57775100D0D056 /* 25-5-AdvancedOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "25-5-AdvancedOperator.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE5C2C57775100D0D056 /* 25-6-AdvancedOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "25-6-AdvancedOperator.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE5D2C57775100D0D056 /* 25-7-AdvancedOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "25-7-AdvancedOperator.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		49A1AE5F2C57775100D0D056 /* 26-1-memory safety.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "26-1-memory safety.playground"; sourceTree = "<group>"; };
-		49A1AE602C57775100D0D056 /* 26-2-memory safety.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "26-2-memory safety.playground"; sourceTree = "<group>"; };
+		49A1AE5F2C57775100D0D056 /* 26-1-memory safety.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "26-1-memory safety.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		49A1AE602C57775100D0D056 /* 26-2-memory safety.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "26-2-memory safety.playground"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		49A1AE622C57775100D0D056 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49A1AE632C57775100D0D056 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A1AE642C57775100D0D056 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };

@@ -35,7 +35,9 @@ var copyOfStepSize = stepSize    // 명시적으로 복사본 변수를 만들�
 
 // 변수 stepSize에 장기적인 쓰기 접근 (입출력 파라미터)
 func incrementing(_ number: inout Int) {
+//🍑 ↱copyOfStepSize ↱stepSize
     number += stepSize         // 변수 stepSize에 읽기 접근       // number = number + stepSize
+    
 }
 
 
