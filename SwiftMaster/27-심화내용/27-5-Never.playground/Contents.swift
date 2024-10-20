@@ -24,7 +24,7 @@ var num1 = 5
 var num2 = 3
 
 
-var num3 = addTwoNumbers(a: num1, b: num2)
+var num3 = addTwoNumbers(a: num1, b: num2) // 🍑 실행하면 17번째 줄로 가서 실행, 그리고 실행 후 다시 28줄로 돌아감
 print(num3)
 
 
@@ -45,7 +45,7 @@ func crashAndBurn() -> Never {
 
 
 print("1")
-crashAndBurn()
+crashAndBurn() // 🍑  40번째 갔다가 네버이기때문에 49번째 줄로 제어권 안돌아옴
 print("2")
 
 
@@ -98,7 +98,7 @@ enum SomeError: Error {
 }
 
 
-// 2) 에러를 던지는 함수의 정의
+// 2) 에러를 던지는 함수의 정의 // 🍑 에러 던지는 경우 딱히 안씀
 
 func someThrowingErrorFuncion() throws -> Never {
     if true {

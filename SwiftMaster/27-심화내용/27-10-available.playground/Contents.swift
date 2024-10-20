@@ -19,10 +19,10 @@ class ViewController: UIViewController {
         
     }
     
-    @available(iOS 11.0, *)
+    @available(iOS 11.0, *) // 🍑 클래스, 함수 등에는 @
     func doSomething() {
         // (if, while, guard문으로도 사용 가능)
-        if #available(iOS 11.0, *) {
+        if #available(iOS 11.0, *) { // 🍑  조건문에는 #
             // iOS 11버전이상인 경우 적용 시킬 코드를 작성
             
         } else {

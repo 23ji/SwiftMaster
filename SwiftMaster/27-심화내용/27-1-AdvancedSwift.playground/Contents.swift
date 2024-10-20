@@ -36,11 +36,14 @@ let num2: Int = 456
 num1 == num2
 num1 != num2
 
+
 let str1: String = "Hello"
 let str2: String = "안녕"
 
 str1 == str2
 str1 != str2
+
+// 🍑  이게 가능했던 이유 => 타입메서드로 위 연산자들이 구현되어 있기 때문
 
 
 
@@ -88,6 +91,7 @@ SuperComputer.cpu(core: 8, ghz: 3.5) == SuperComputer.cpu(core: 16, ghz: 3.5)
 SuperComputer.cpu(core: 8, ghz: 3.5) != SuperComputer.cpu(core: 8, ghz: 3.5)
 
 
+// 🍑  원래는 Eq 채택하고 타입메서드 구현해야하지만, 이 경우엔 자동 채택되어 동등성 연산자 사용 가능했던것 / 연관값인 int 등이 이미 채택한 타입이기 때문
 
 
 
@@ -106,7 +110,7 @@ enum Direction {
 Direction.north == Direction.east    // false
 Direction.north != Direction.east    // true
 
-
+// 🍑  원래는 Eq 채택하고 타입메서드 구현해야하지만, 이 경우엔 자동 채택/구현되어 동등성 연산자 사용 가능했던것 => 단순 열거형이라서
 
 
 /*:
@@ -124,10 +128,10 @@ struct Dog {
     var age: Int
 }
 
-extension Dog: Equatable {}
+extension Dog: Equatable {} // 🍑 구조체의 경우 Eq 프로토콜 채택해야 고급 연산자 사용가능! 중요⭐️
 
 
-// 이렇게 전체 구현할 필요 없음
+// 이렇게 전체 구현할 필요 없음 // 🍑 모든 저장속성이 eq 채택한 경우기 떄문에 위처럼만 채택!만 하면 구현 안해도 자동으로 구현해줌
 //extension Dog: Equatable {
 //    static func ==(lhs: Dog, rhs: Dog) -> Bool {
 //        return lhs.name == rhs.name && lhs.age == rhs.age
@@ -149,7 +153,7 @@ dog1 != dog2
  */
 // 예외-1) Equatable 프로토콜 채택시 클래스는 예외
 //       클래스는 인스턴스 비교를 하는 항등연산자(===)가 존재하기 때문에 비교연산자(==) 구현방식에 대해
-//       개발자에게 위임 (클래스는 원칙적으로 동일성(==) 비교 불가)
+//       개발자에게 위임 (클래스는 원칙적으로 동일성(==) 비교 불가) // 🍑 그래서 Eq 채택해도 개발자가 직접 채택/구현해줘야함
 
 
 class Person {

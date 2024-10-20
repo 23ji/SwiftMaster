@@ -73,7 +73,7 @@ let school1 = School(name: "슈퍼고", affiliate: smallSchool1)
 
 // 만약에 접근하기위해, 써야하는 코드가 늘어난다면...
 
-let gildogsName = school1.affiliate.classMember.name
+let gildogsName = school1.affiliate.classMember.name // 🍑 직접적 접근
 
 
 
@@ -84,11 +84,16 @@ let gildogsName = school1.affiliate.classMember.name
  */
 // 스위프트5의 방식
 
-let namePath = \School.affiliate.classMember.name      // 미리 경로를 지정 (keyPath)
+let namePath = \School.affiliate.classMember.name      // 미리 경로를 지정 (keyPath) // 🍑 간접적 접근
 
 school1[keyPath: namePath]     // 딕셔너리방식(서브스크립트)로 접근
 
+/* 🍑 아래처럼 appending 이용해 경로 추가도 가능
+let namePath1 = \School.affiliate.classMember
+let newNamePath1 = namePath1.appending(path: \.name)
 
+school1[keyPath: newNamePath1]     // 딕셔너리방식(서브스크립트)로 접근
+ */
 
 /**================================================================================
  keyPath 타입 (외울 필요 없음)
@@ -118,7 +123,7 @@ school1[keyPath: namePath]     // 딕셔너리방식(서브스크립트)로 접�
 //person2.name
 //
 //
-//let gjName = person2.value(forKey: "name") as? String
+//let gjName = person2.value(forKey: "name") as? String // 🍑  항상 타입캐스팅 했어야해서 불편
 //let gjName2 = person2.value(forKeyPath: #keyPath(Person.name)) as? String
 //
 //

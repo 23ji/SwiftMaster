@@ -24,7 +24,7 @@ func someCloseAppSituation() {
 }
 
 
-//someCloseAppSituation()
+//someCloseAppSituation() // 🍑 이거 실행하면 아래 출력됨
 // __lldb_expr_4/fatalError.playground:22: Fatal error: 앱 해킹시도 흔적 발견
 
 
@@ -57,10 +57,10 @@ var name: String
 /**===============================================
  [디버깅(검증) 함수]
  - assert()
- - assertionFailure()
+ - assertionFailure() // 🍑  디버깅 때 사용
  - precondition()
- - preconditionFailure()
- - fatalError()
+ - preconditionFailure() // 🍑  실제 출시 앱에 사용
+ - fatalError() // 🍑 제일 쎈 종료
  
  앱을 테스트하여서, 런타임동안 발생할 수 있는 여러 버그의 가능성,
  잘못된 코드의 검증 등을 수행하도록 도와주는 함수
@@ -118,7 +118,7 @@ func appUpdateCheck2() {
 
 func enterWrongValue1() {
     let someWrongInput = -1
-    assert(someWrongInput > 0, "유저가 값을 잘못 입력")
+    assert(someWrongInput > 0, "유저가 값을 잘못 입력") // 🍑 조건, 출력 메서지
 }
 
 
@@ -134,7 +134,7 @@ func enterWrongValue2() {
         // 정상적으로 처리하는 코드
         
     } else {
-        assertionFailure("유저가 값을 잘못 입력")
+        assertionFailure("유저가 값을 잘못 입력") // 🍑 오류 메세지 (조건 안따짐)
     }
 }
 

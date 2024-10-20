@@ -21,13 +21,14 @@ enum Color: CaseIterable {  // Int
 
 
 
-//var color = Color.red
+//var color = Color.red // 🍑 열거형은 이렇게 붕어빵 찍어낼 수 있음
 //color = .blue
 //color = .green
 
 
 
 Color.allCases     // [Color.red, Color.green, Color.blue]
+// 🍑 allCases는 타입 속성임, 열거형의 모든 케이스를 배열에 담아 리턴 / CaseIterable 채택해서 사용가능해진거임
 print(Color.allCases)
 
 
@@ -49,8 +50,9 @@ for color in Color.allCases {
 
 // 필요로 하는 곳에서 선언도 간단하게
 struct SomeView {
-    let colors: [Color] = [Color.red, Color.green, Color.blue]
-    //let colors = Color.allCases
+    //let colors: [Color] = [Color.red, Color.green, Color.blue]
+    // 🍑 위처럼 안하고 아래처럼 가능해짐, 나중에 케이스 추가되도 일일이 추가해줄 필요 없음
+    let colors = Color.allCases
 }
 
 
@@ -68,7 +70,7 @@ print("방향은 \(CompassDirection.allCases.count)가지")
 // 2) 배열 ===> 고차함수 이용 가능
 
 let caseList = CompassDirection.allCases
-                               .map({ "\($0)" })
+                               .map({ "\($0)" }) // 🍑 문자열로 변환하는 중
                                .joined(separator: ", ")  // 배열 ===> 문자열화
 // "north, south, east, west"
 
@@ -103,9 +105,9 @@ let number2 = Int.random(in: 0...100) % RpsGame.allCases.count    // 나머지�
 
 print(RpsGame.init(rawValue: number)!)
 
+// 🍑 이제는 위처럼 하지 않아도됨, 아래처럼 가능
 
-
-
+RpsGame.allCases.randomElement()
 
 
 
