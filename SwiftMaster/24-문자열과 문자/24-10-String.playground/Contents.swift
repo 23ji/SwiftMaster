@@ -32,8 +32,8 @@ string.hasSuffix("world!")
 
 // 접두어/접미어 반환 (앞에서 또는 뒤에서 몇글자 뽑아내기)
 
-string.prefix(2)
-string.suffix(3)
+string.prefix(2) // 🍑 앞에서 2글자
+string.suffix(3) // 🍑뒤에서 3글자
 
 
 // 공통 접두어 반환

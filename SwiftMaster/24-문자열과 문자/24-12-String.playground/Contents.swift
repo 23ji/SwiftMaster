@@ -22,7 +22,7 @@ import UIKit
 
 
 
-// 1) 앞뒤의 공백문자의 제거
+// 1) 앞뒤의 공백문자의 제거 // 🍑 trimmingCharacters
 
 var userEmail = " my-email@example.com "
 
@@ -58,6 +58,7 @@ print(removedString)       // 중간에 있는 !는 제거하지 못함
 // 3) (중간에 포함된)공백문자의 제거
 
 var name = " S t e v e "
+            // 🍑 요소화 할거다 <ㄱ / " " 를 기준으로 나눠서
 var removedName = name.components(separatedBy: " ").joined()    //["", "S", "t", "e", "v", "e", ""]
 print(removedName)
 
@@ -130,6 +131,7 @@ userEmail = " my-email@example.com "
 var characterSet = CharacterSet.whitespaces   // 공백문자 집합
 
 trimmedString = userEmail.trimmingCharacters(in: characterSet)
+// 🍑 = trimmedString = userEmail.trimmingCharacters(in: .whitespaces)=> [" "]대신 whitespaces 쓰면 됨
 print(trimmedString)
 
 

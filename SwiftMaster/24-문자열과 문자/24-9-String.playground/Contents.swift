@@ -62,13 +62,15 @@ var name = "Hello, Swift"
 
 
 name.compare("hello", options: [.caseInsensitive]) == .orderedDescending    // 내림차순  ( , ==>  )
-
+// 🍑 compare 메서드를 통해 다양한 옵션값(파라미터)들로 비교 가능, 옵션에 배열도 넣을 수 있음
+// 🍑 보통 위처럼 쓰진 않고 저걸 변수에 넣어서 스위치 문으로 활용
 
 /*:
  ---
  * 문자열 비교 옵션(String.CompareOptions)과 비교 결과
  ---
  */
+// 🍑 외울 필요 없고 필요할 때마다 찾아서 쓰면 됨
 // String.CompareOptions (비교 옵션)
 
 /**==========================================
@@ -116,7 +118,7 @@ name.compare("hello", options: [.caseInsensitive]) == .orderedDescending    // �
 
 // .numeric 옵션 숫자 전체를 인식해서 비교
 "album_photo9.jpg".compare("album_photo10.jpg", options: [.numeric]) == .orderedAscending
-
+// 🍑 숫자 전체를 비교하기 떄문에 9보다 10의 1이 더 앞에 있어서 앞에 있다라고 할 일이 없음!
 
 // .literal 옵션
 "\u{D55C}".compare("\u{1112}\u{1161}\u{11AB}", options: [.literal]) == .orderedSame
